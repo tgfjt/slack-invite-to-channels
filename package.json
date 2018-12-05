@@ -1,0 +1,33 @@
+{
+  "name": "slack-invite-to-channels",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build src/app.js -d static/assets/ -o bundle.js",
+    "watch": "parcel watch src/app.js -d static/assets/ -o bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgfjt/slack-invite-to-channels.git"
+  },
+  "keywords": [
+    "slack"
+  ],
+  "author": "tgfjt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tgfjt/slack-invite-to-channels/issues"
+  },
+  "homepage": "https://github.com/tgfjt/slack-invite-to-channels#readme",
+  "dependencies": {
+    "material-design-lite": "^1.3.0",
+    "parcel-bundler": "^1.10.3",
+    "preact": "^8.3.1",
+    "preact-mdl": "^2.2.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {}
+}
