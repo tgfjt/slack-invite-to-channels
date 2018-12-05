@@ -1,31 +1,18 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/gin-gonic/gin"
+	"github.com/zserge/lorca"
 )
 
-type Auth struct {
-	Token string `json:"token" binding:"required"`
-}
-
 func main() {
-	r := gin.Default()
-	r.StaticFile("/", "./static/index.html")
+	server()
 
-	r.POST("/members", func(c *gin.Context) {
-		var auth Auth
+	var ui lorca.UI
+	ui, _ = lorca.New("", "", 1024, 800)
 
-		if err := c.ShouldBindJSON(&auth); err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-			return
-		}
+	ui.Load("http://localhost:12345")
 
-		c.JSON(200, gin.H{
-			"members": nil,
-		})
-	})
+	<-ui.Done()
+	defer ui.Close()
 
-	r.Run(":12345")
 }
