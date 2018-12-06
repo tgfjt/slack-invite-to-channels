@@ -1,6 +1,9 @@
 node_modules
+package-lock.json
 
 .cache
 
-static/assets/*.js
-static/assets/*.map
+public/assets/*.js
+public/assets/*.map
+
+Lacks.app
